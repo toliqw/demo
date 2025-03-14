@@ -1,0 +1,66 @@
+.water-drop {
+  position: relative;
+  border-radius: 50%;
+  animation: drop 2s infinite;
+  transform-origin: center;
+}
+
+.ripple {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  animation: ripple 2s infinite;
+  opacity: 0;
+}
+
+.ripple:nth-child(1) {
+  animation-delay: 0.2s;
+}
+
+.ripple:nth-child(2) {
+  animation-delay: 0.4s;
+}
+
+.ripple:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+@keyframes drop {
+  0% {
+    transform: scale(1) translateY(0);
+  }
+  20% {
+    transform: scale(0.9) translateY(5px);
+  }
+  40% {
+    transform: scale(1.1) translateY(20px);
+  }
+  50% {
+    transform: scale(1) translateY(25px);
+  }
+  60% {
+    transform: scale(0.9) translateY(30px);
+  }
+  80% {
+    transform: scale(1) translateY(35px);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1) translateY(40px);
+    opacity: 0;
+  }
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(1);
+    opacity: 0.4;
+    border: 2px solid currentColor;
+  }
+  100% {
+    transform: scale(2);
+    opacity: 0;
+    border: 2px solid currentColor;
+  }
+}
